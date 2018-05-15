@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 RUN apt -y update
 RUN apt -y install sudo wget  
@@ -19,8 +19,8 @@ RUN sudo chmod +x /home/cells/cmd.sh
 RUN sudo chown cells:cells -R /home/cells/
 
 
-ENV addr 192.168.0.195
-ENV port 2015
+ENV ADDR 192.168.0.195
+ENV ADDR 2015
 
 
 CMD ["supervisord", "-n"]
