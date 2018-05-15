@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian
 
 RUN apt -y update
 RUN apt -y install sudo wget  
@@ -19,8 +19,8 @@ RUN sudo chmod +x /home/cells/cmd.sh
 RUN sudo chown cells:cells -R /home/cells/
 
 
-ENV ADDR 192.168.0.195
-ENV ADDR 2015
-
+ENV CELLS_BIND localhost
+ENV CELLS_EXTERNAL localhost
+ENV PORT 8080
 
 CMD ["supervisord", "-n"]
