@@ -21,6 +21,5 @@ RUN sudo chown cells:cells -R /home/cells/
 
 ENV CELLS_BIND localhost
 ENV CELLS_EXTERNAL localhost
-ENV PORT 8080
 
 CMD ["supervisord", "-n"]
