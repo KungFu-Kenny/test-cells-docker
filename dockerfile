@@ -1,4 +1,4 @@
-FROM debian
+FROM ubuntu:latest
 
 RUN apt -y update
 RUN apt -y install sudo wget  
