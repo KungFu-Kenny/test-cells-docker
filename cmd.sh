@@ -9,3 +9,10 @@ sudo sed -i -e "s/listen.owner\s*=\s*www-data/listen.owner = cells/g" /etc/php/7
 sudo sed -i -e "s/listen.group\s*=\s*www-data/listen.group = cells/g" /etc/php/7.2/fpm/pool.d/www.conf
 
 sudo service php7.2-fpm restart
+
+
+FILE=/home/cells/.config/pydio/cells/pydio.json
+if [ ! -f $FILE ] ; then
+	./cells install --bind $addr:$port --external $addr:$port
+else
+	./cells start

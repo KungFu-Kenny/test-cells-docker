@@ -10,11 +10,17 @@ RUN sudo apt -y install php-cli php-fpm php-intl php-gd php-dom php-curl supervi
 
 ADD commands.conf /etc/supervisor/conf.d/cmd.conf
 ADD cmd.sh /home/cells/cmd.sh
-WORKDIR /home/cells/
-RUN wget https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells
+
+WORKDIR /home/cells
+RUN wget "https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells"
 
 RUN sudo chmod +x /home/cells/cells
 RUN sudo chmod +x /home/cells/cmd.sh
 RUN sudo chown cells:cells -R /home/cells/
+
+
+ENV addr 192.168.0.195
+ENV port 2015
+
 
 CMD ["supervisord", "-n"]
