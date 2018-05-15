@@ -16,3 +16,4 @@ if [ ! -f $FILE ] ; then
 	./cells install --bind $addr:$port --external $addr:$port
 else
 	./cells start
+fi
