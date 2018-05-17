@@ -19,7 +19,9 @@ RUN sudo chmod +x /home/cells/cmd.sh
 RUN sudo chown cells:cells -R /home/cells/
 
 
-ENV CELLS_BIND localhost
-ENV CELLS_EXTERNAL localhost
+ENV CELLS_BIND localhost:8080
+ENV CELLS_EXTERNAL localhost:8080
+
+VOLUME [ "/home/cells/.config/pydio/cells/" ]
 
 CMD ["supervisord", "-n"]
