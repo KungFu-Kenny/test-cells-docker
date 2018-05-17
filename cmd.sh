@@ -12,7 +12,7 @@ sudo service php7.2-fpm status
 FILE=/home/cells/.config/pydio/cells/pydio.json
 
 if [ ! -f $FILE ] ; then
-	sudo -u cells bash ./cells install --bind $CELLS_BIND --external $CELLS_EXTERNAL
+	./cells install --bind $CELLS_BIND --external $CELLS_EXTERNAL
 else
-	sudo -u cells bash ./cells start
+	./cells start
 fi
