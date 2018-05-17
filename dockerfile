@@ -13,8 +13,6 @@ ADD cmd.sh /home/cells/cmd.sh
 
 WORKDIR /home/cells
 
-USER cells
-
 RUN wget "https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells"
 
 RUN sudo chmod +x /home/cells/cells
@@ -28,4 +26,4 @@ ENV CELLS_EXTERNAL localhost:8080
 VOLUME [ "/home/cells/.config/pydio/cells/" ]
 VOLUME [ "/root/.config/pydio/cells/" ]
 
-CMD ["sudo", "supervisord", "-n"]
+CMD ["supervisord", "-n"]
