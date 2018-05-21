@@ -2,10 +2,17 @@ version: '3'
 
 services:
   cells:
+<<<<<<< HEAD
     images: cells
     container_name: cells
     hostname: cels
     build: .
+=======
+    build: .
+    image: cells
+    container_name: cells
+    hostname: cells
+>>>>>>> df75501a12a48c69261c0068c2af909ad89bf7fd
     tty: true
     ports:
       - 2015:2015
@@ -15,7 +22,11 @@ services:
       - cellsdata:/home/cells/.config/pydio/cells
 
   database:
+<<<<<<< HEAD
     images: mariadb:latest
+=======
+    image: mariadb:latest
+>>>>>>> df75501a12a48c69261c0068c2af909ad89bf7fd
     hostname: database
     container_name: database
     environment:
