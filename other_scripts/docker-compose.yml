@@ -5,7 +5,7 @@ services:
     build: .
     image: cells
     container_name: cells
-    hostname: cels
+    hostname: cells
     tty: true
     ports:
       - 2015:2015
