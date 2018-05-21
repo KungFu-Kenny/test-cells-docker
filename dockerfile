@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV CELLS_VERSION 0.9.1
+ENV CELLS_VERSION 1.0.0
 
 RUN apt -y update
 RUN apt -y install sudo wget  
