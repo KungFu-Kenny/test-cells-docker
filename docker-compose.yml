@@ -2,10 +2,10 @@ version: '3'
 
 services:
   cells:
-    images: cells
-    container_name: cells
-    hostname: cels
+    image: cells
     build: .
+    container_name: cells
+    hostname: cells
     tty: true
     ports:
       - 2015:2015
@@ -15,11 +15,11 @@ services:
       - cellsdata:/home/cells/.config/pydio/cells
 
   database:
-    images: mariadb:latest
+    image: mariadb:latest
     hostname: database
     container_name: database
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
 
 volumes:
   cellsdata:
