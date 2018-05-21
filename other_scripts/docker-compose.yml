@@ -8,10 +8,9 @@ services:
 		build: .
 		tty: true
 		ports:
-			-2015:2015
-
+			- 2015:2015
 		links:
-			-db
+			- db
 		volumes:
 			- cellsdata:/home/cells/.config/pydio/cells
 
