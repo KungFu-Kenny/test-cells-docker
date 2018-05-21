@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+ENV CELLS_VERSION 0.9.1
 
 RUN apt -y update
 RUN apt -y install sudo wget  
@@ -13,7 +14,7 @@ ADD cmd.sh /home/cells/cmd.sh
 
 WORKDIR /home/cells
 
-RUN wget "https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells"
+RUN wget "https://download.pydio.com/pub/cells/release/${CELLS_VERSION}/linux-amd64/cells"
 
 RUN sudo chmod +x /home/cells/cells
 RUN sudo chmod +x /home/cells/cmd.sh
