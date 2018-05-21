@@ -2,10 +2,10 @@ version: '3'
 
 services:
   cells:
-    images: cells
+    build: .
+    image: cells
     container_name: cells
     hostname: cels
-    build: .
     tty: true
     ports:
       - 2015:2015
@@ -15,7 +15,7 @@ services:
       - cellsdata:/home/cells/.config/pydio/cells
 
   database:
-    images: mariadb:latest
+    image: mariadb:latest
     hostname: database
     container_name: database
     environment:
