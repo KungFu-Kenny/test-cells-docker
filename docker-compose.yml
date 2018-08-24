@@ -8,7 +8,7 @@ services:
     hostname: cells
     tty: true
     ports:
-      - 2015:2015
+      - 8080:8080
     links:
       - db
     volumes:

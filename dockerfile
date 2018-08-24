@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-ENV CELLS_VERSION 1.0.0
 
 RUN apt -y update
 RUN apt -y install sudo wget  
@@ -7,14 +6,13 @@ RUN apt -y install sudo wget
 RUN adduser cells --disabled-password --gecos GECOS
 RUN echo "cells ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-RUN sudo apt -y install php-cli php-fpm php-intl php-gd php-dom php-curl supervisor
+RUN sudo apt -y install supervisor
 
-ADD commands.conf /etc/supervisor/conf.d/cmd.conf
-ADD cmd.sh /home/cells/cmd.sh
+COPY commands.conf /etc/supervisor/conf.d/cmd.conf
+COPY cmd.sh /home/cells/cmd.sh
+COPY cells /home/cells/cells
 
 WORKDIR /home/cells
-
-RUN wget "https://download.pydio.com/pub/cells/release/${CELLS_VERSION}/linux-amd64/cells"
 
 RUN sudo chmod +x /home/cells/cells
 RUN sudo chmod +x /home/cells/cmd.sh
